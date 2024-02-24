@@ -9,13 +9,13 @@ class Countries extends Controller
         $this->loadModel("Country");
         $allCountries = $this->Country->allCountries();
         $allContinents = $this->Country->allContinents();
-        $btnId = "btnCountries";
+        $btnId = "btnCountry";
         $this->render('index', compact('allCountries','btnId','allContinents'));
     }
 
     public function edit(int $currentCountryId)
     {
-        $btnId = "btnCountry";
+        $btnId = "btnCountries";
         $this->loadModel("Country");
         $allContinents = $this->Country->allContinents();
         $this->render('edit', compact('currentCountryId','allContinents','btnId'));
@@ -26,7 +26,9 @@ class Countries extends Controller
   
         if (!empty($_POST['country'])) {
             $this->loadModel("Country");
-            $this->Country->insertCountry($_POST['country'],$_POST['continent']);
+            $this->Country->insertCountry(
+                htmlentities($_POST['country']),//htmlentities securise la donnée utilisateur ($_POST) afin que la donnée ne soit pas interprétée comme du code et empeche donc toute injection      
+                htmlentities($_POST['continent']));      
             $this->redirectWithMessage("Pays <b>".$_POST['country']."</b> bien ajouté", "success");
         } else {
             header("Location: " . PATH . "/countries");
@@ -38,9 +40,9 @@ class Countries extends Controller
            $updatedCountry = array();
         if (!empty($_POST['updatedCountry'])) {
 
-            $updatedCountry['idContinent'] = $_POST['updatedContinent'];
-            $updatedCountry['updatedCountry'] = $_POST['updatedCountry'];
-            $updatedCountry['idCountry'] = $_POST['id'];
+            $updatedCountry['idContinent'] = htmlentities($_POST['updatedContinent']);
+            $updatedCountry['updatedCountry'] = htmlentities($_POST['updatedCountry']);
+            $updatedCountry['idCountry'] = htmlentities($_POST['id']);
             
             $this->loadModel("Country");
             $this->Country->updateCountry($updatedCountry);
@@ -51,7 +53,7 @@ class Countries extends Controller
     public function deleteCountry(int $id): void
     {
         $this->loadModel("Country");
-        $this->Country->delete($id);
+        $this->Country->delete(htmlentities($id));
         $this->redirectWithMessage('Pays numéro <b>'.$id.'</b> bien supprimé', 'danger');
     }
 

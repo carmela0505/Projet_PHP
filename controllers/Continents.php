@@ -25,7 +25,7 @@ class Continents extends Controller
         if (!empty($_POST['continent'])) {
             $this->loadModel("Continent");
             $this->Continent->insert($continent);
-            $this->redirectWithMessage("Continent bien ajouté", "success");
+            $this->redirectWithMessage("Continent " .$continent. "  bien ajouté", "success");
         }else{
         header("Location: " . PATH . "/continents");        
         } 
@@ -34,19 +34,19 @@ class Continents extends Controller
     public function updateContinent(): void
     {
         if (!empty($_POST['updatedContinent'])) {
-            $currentContinentId = $_POST['id'];
-            $updatedContinent = $_POST['updatedContinent'];
+            $currentContinentId = htmlentities($_POST['id']);
+            $updatedContinent = htmlentities($_POST['updatedContinent']);
             $this->loadModel("Continent");
             $this->Continent->update($currentContinentId, $updatedContinent);
-            $this->redirectWithMessage('Continent bien modifié', 'info');
+            $this->redirectWithMessage('Continent ' .$updatedContinent. ' bien modifié', 'info');
         }
     }
 
     public function deleteContinent(int $id): void
     {
         $this->loadModel("Continent");
-        $this->Continent->delete($id);
-        $this->redirectWithMessage('Continent bien supprimée', 'danger');
+        $this->Continent->delete(htmlentities($id));
+        $this->redirectWithMessage('Continent ' .$id.  ' bien supprimée', 'danger');
     }
 
 

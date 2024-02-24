@@ -1,15 +1,15 @@
-<h1>Liste des Bieres </h1>
+<br><h1>Liste des Bieres </h1>
 
 
 <form action="<?= PATH ?>/Bieres/newBiere" method="POST">
 
-    Entrez une nouvelle type de biere : <input type="text" name="biere"> 
-    <input type="submit" value="Valider">
+    Ajouter une nouvelle type de biere : <input type="text" name="biere"> 
+    <button type="submit" class="btn btn-primary">Valider</button>
  <br><br>
 
 </form>
 
-<table class="table table-info table-hover">
+<table class="table table-secondary table-hover">
     <tr>
         <th>Code</th>
         <th>Nom</th>
@@ -27,8 +27,9 @@
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>
+    
     <?php endforeach ?>
 
     </table>
-
+   
     

@@ -4,10 +4,10 @@
 <form action="<?= PATH ?>/Continents/newContinent" method="POST"> 
 
 Entrez un nouveau continent : <input type="text" name="continent"> 
-<input type ="submit" value ="Valider"> <br><br>
+<button type="submit" class="btn btn-primary">Valider</button><br><br>
 
 </form>
-<table class="table table-secondary table-hover">
+<table class="table table-primary table-hover">
     <tr>
         <th>Code</th>
         <th>Nom</th>
@@ -27,7 +27,7 @@ Entrez un nouveau continent : <input type="text" name="continent">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
         </td>
     </tr>
-
+    
     <?php endforeach ?>
 
 </table>

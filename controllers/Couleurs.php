@@ -26,7 +26,7 @@ class Couleurs extends Controller
         if (!empty($_POST['couleur'])) {
             $this->loadModel("Couleur");
             $this->Couleur->insert($couleur);
-            $this->redirectWithMessage("Couleur bien ajoutée", "success");
+            $this->redirectWithMessage("Couleur " .$couleur. " bien ajoutée", "success");
         } else {
             header("Location: " . PATH . "/couleurs");
         }
@@ -35,19 +35,19 @@ class Couleurs extends Controller
     public function updateColor(): void
     {
         if (!empty($_POST['updatedColor'])) {
-            $currentColorId = $_POST['id'];
-            $updatedColor = $_POST['updatedColor'];
+            $currentColorId = htmlentities($_POST['id']);
+            $updatedColor = htmlentities($_POST['updatedColor']);
             $this->loadModel("Couleur");
             $this->Couleur->update($currentColorId, $updatedColor);
-            $this->redirectWithMessage('Couleur bien modifiée', 'info');
+            $this->redirectWithMessage('Couleur ' . $updatedColor. '  bien modifiée', 'info');
         }
     }
 
     public function deleteColor(int $id): void
     {
         $this->loadModel("Couleur");
-        $this->Couleur->delete($id);
-        $this->redirectWithMessage('Couleur bien supprimée', 'danger');
+        $this->Couleur->delete(htmlentities($id));
+        $this->redirectWithMessage('Couleur ' . $id. ' bien supprimée', 'danger');
     }
 
 

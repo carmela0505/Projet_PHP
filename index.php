@@ -11,7 +11,7 @@
 
 // On génère une constante contenant le chemin vers la racine publique du projet
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
-// define('PATH', '/DWWM22031/MVC_Tuto_Youtube_Exemple_Debut_DEPOT');  // Mettre '' si le site est à la racine du serveur
+// Mettre '' si le site est à la racine du serveur
 define('PATH', getUrlWithoutFilename());
 
 // On appelle le modèle et le contrôleur principaux

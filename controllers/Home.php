@@ -16,7 +16,7 @@ class Home extends Controller{
         })";
 
         $montitre2 = "Bienvenue";
-        $btnId = "btnHome";
+        $btnId = "btnHome";        
         $this->render('index', compact('scriptJS', 'montitre2','btnId'));
     }
 

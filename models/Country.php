@@ -15,8 +15,7 @@ class Country extends Model
         $sql = "SELECT country.*, NOM_CONTINENT 
             FROM " . $this->table . " country
             INNER JOIN continent NOM_CONTINENT ON country.ID_CONTINENT = NOM_CONTINENT.ID_CONTINENT 
-            ORDER BY country.ID_PAYS DESC
-            LIMIT 10";
+            ORDER BY country.ID_PAYS DESC LIMIT 20";
         $query = $this->_connexion->prepare($sql);
         $query->execute();
         return $query->fetchAll();
@@ -47,9 +46,9 @@ class Country extends Model
         $sql = "UPDATE " . $this->table . " set NOM_PAYS=?, ID_CONTINENT=? WHERE ID_PAYS=?";
         $query = $this->_connexion->prepare($sql);
         $query->execute([
-        $updatedCountry['updatedCountry'],
-        intval($updatedCountry['idContinent']),
-        intval($updatedCountry['idCountry'])
+         $updatedCountry['updatedCountry'],
+         intval($updatedCountry['idContinent']),
+         intval($updatedCountry['idCountry'])
         ]);
     }
 

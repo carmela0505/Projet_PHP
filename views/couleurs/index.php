@@ -4,7 +4,7 @@
 <form action="<?= PATH ?>/Couleurs/newColor" method="POST">
 
     Entrez une nouvelle couleur : <input type="text" name="couleur"> 
-    <input type="submit" value="Valider">
+    <button type="submit" class="btn btn-primary">Valider</button>
  <br><br>
 
 </form>
@@ -27,6 +27,7 @@
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>
+    
     <?php endforeach ?>
     
     </table>

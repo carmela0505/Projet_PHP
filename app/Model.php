@@ -16,7 +16,6 @@ abstract class Model{
     abstract public function update(int $id, string $nom);
     abstract public function delete(int $id);
     abstract public function insert(string $nom);
-
     /**
      * Fonction d'initialisation de la base de données
      *
@@ -25,18 +24,15 @@ abstract class Model{
     public function getConnection(){
         // On supprime la connexion précédente
         $this->_connexion = null;
-
         // On essaie de se connecter à la base
         try{
             $this->_connexion = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->_connexion->exec("set names utf8");
         }catch(PDOException $exception){
             
-            echo "Erreur de connexion : " . $exception->getMessage();
-          
+            echo "Erreur de connexion : " . $exception->getMessage();       
         }
     }
-
     /**
      * Méthode permettant d'obtenir un enregistrement de la table choisie en fonction d'un id
      *
@@ -59,7 +55,6 @@ abstract class Model{
         $query->execute();
         return $query->fetch();    
     }
-
     /**
      * Méthode permettant d'obtenir tous les enregistrements de la table choisie
      *

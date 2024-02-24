@@ -24,7 +24,7 @@ class Fabricants extends Controller
         if (!empty($_POST['fabricant'])) {
             $this->loadModel("Fabricant");
             $this->Fabricant->insert($fabricant);
-            $this->redirectWithMessage("Fabricant bien ajouté", "success");
+            $this->redirectWithMessage("Fabricant " .$fabricant. " bien ajouté", "success");
         } else {
             header("Location: " . PATH . "/fabricants");
         }
@@ -33,20 +33,20 @@ class Fabricants extends Controller
     public function updateFabricant(): void
     {
         if (!empty($_POST['updatedFabricant'])) {
-            $currentFabricantId = $_POST['id'];
-            $updatedFabricant = $_POST['updatedFabricant'];
+            $currentFabricantId = htmlentities($_POST['id']);
+            $updatedFabricant = htmlentities($_POST['updatedFabricant']);
             $this->loadModel("Fabricant");
             $this->Fabricant->update($currentFabricantId, $updatedFabricant);
             // $allColors = $this->Couleur->getAll();
-            $this->redirectWithMessage('Fabricant bien modifié', 'info');
+            $this->redirectWithMessage('Fabricant ' .$updatedFabricant. ' bien modifié', 'info');
         }
     }
 
     public function deleteFabricant(int $id): void
     {
         $this->loadModel("Fabricant");
-        $this->Fabricant->delete($id);
-        $this->redirectWithMessage('Fabricant bien supprimé', 'danger');
+        $this->Fabricant->delete(htmlentities($id));
+        $this->redirectWithMessage('Fabricant ' .$id. ' bien supprimé', 'danger');
     }
 
 

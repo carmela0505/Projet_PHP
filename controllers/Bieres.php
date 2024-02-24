@@ -25,7 +25,7 @@ class Bieres extends Controller
         if (!empty($_POST['biere'])) {
             $this->loadModel("Biere");
             $this->Biere->insert($biere);
-            $this->redirectWithMessage("Biere bien ajoutée", "success");
+            $this->redirectWithMessage("Biere " .$biere." bien ajoutée", "success");
         } else {
             header("Location: " . PATH . "/bieres");
         }
@@ -34,11 +34,11 @@ class Bieres extends Controller
     public function updateBiere(): void
     {
         if (!empty($_POST['updatedBiere'])) {
-            $currentBiereId = $_POST['id'];
-            $updatedBiere = $_POST['updatedBiere'];
+            $currentBiereId = htmlentities($_POST['id']);
+            $updatedBiere = htmlentities($_POST['updatedBiere']);
             $this->loadModel("Biere");
             $this->Biere->update($currentBiereId, $updatedBiere);
-            $this->redirectWithMessage('Biere bien modifiée', 'info');
+            $this->redirectWithMessage('Biere ' .$updatedBiere. ' bien modifiée', 'info');
         }
     }
 
@@ -46,7 +46,7 @@ class Bieres extends Controller
     {
         $this->loadModel("Biere");
         $this->Biere->delete($id);
-        $this->redirectWithMessage('Biere bien supprimée', 'danger');
+        $this->redirectWithMessage('Biere ' .$id. ' bien supprimée', 'danger');
     }
 
 

@@ -3,8 +3,8 @@
 
 <form action="<?= PATH ?>/Fabricants/newFabricant" method="POST">
 
-  Entrez un nouveau fabricant :<input type="text" name="fabricant"> 
-    <input type="submit" value="Valider">
+     Entrez un nouveau fabricant :<input type="text" name="fabricant"> 
+     <button type="submit" class="btn btn-primary">Valider</button>
  <br><br>
 
 </form>
@@ -27,6 +27,7 @@
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>
+    
     <?php endforeach ?>
 
     </table>
