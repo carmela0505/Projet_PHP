@@ -2,9 +2,9 @@
 abstract class Model{
     // Informations de la base de données
     private $host = "localhost";
-    private $db_name = "sdbm_v2";
-    private $username = "root";
-    private $password = "";
+    private $db_name = "niwa6713_u625238609_sdbm";
+    private $username = "niwa6713_case trouvrmela";
+    private $password = "Bekind&patient";
      
     // Propriété qui contiendra l'instance de la connexion
     protected $_connexion;

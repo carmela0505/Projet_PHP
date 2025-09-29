@@ -1,0 +1,24 @@
+
+# Composer dependencies
+/vendor/
+
+# Symfony/Doctrine cache (if any)
+/var/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Uploaded files
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
