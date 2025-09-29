@@ -68,5 +68,4 @@ Carmela Urbano
 💼 GitHub: carmela0505
 
    
-   git clone https://github.com/YourUsername/MVCTUBE.git
-   cd MVCTUBE
+  
