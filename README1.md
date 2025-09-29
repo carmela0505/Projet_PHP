@@ -29,7 +29,14 @@ It enables users to manage suppliers, beers, orders, and stock levels, while fol
 - **Language:** PHP  
 - **Database:** MySQL  
 - **Front-end:** HTML, CSS, Bootstrap  
-- **Architecture:** MVC (Model–View–Controller)  
+- **Architecture:** MVC (Model–View–Controller)
+
+- Structure du projet
+Projet_PHP/
+├── app/            # Modèles, Vues, Contrôleurs
+├── public/         # Fichiers publics (index.php, assets, CSS, JS)
+├── config/         # Configuration de la base de données
+└── README.md
 
 ### Installation
 1. Clone the repository:
