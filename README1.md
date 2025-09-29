@@ -1,46 +1,47 @@
-# MVCTUBE – PHP MVC Video Management App
-# MVCTUBE – Application de gestion de vidéos en PHP MVC
+# MVCTUBE – Beer Management (PHP MVC Project)  
+# MVCTUBE – Gestion de Bières (Projet PHP MVC)
 
-MVCTUBE is a lightweight **PHP MVC application** built as a learning project to practice building from scratch using the MVC architecture.  
-It allows users to manage a collection of videos with clean routing, reusable views, and secure database interaction.  
+## Francais
+MVCTUBE est une application PHP MVC dédiée à la gestion d’une cave à bières.
+Elle permet de gérer les fournisseurs, les bières, les commandes et le suivi des stocks, en respectant l’architecture Modèle–Vue–Contrôleur pour un code clair et évolutif.
 
-MVCTUBE est une **application PHP MVC** légère, développée comme projet d’apprentissage pour mettre en pratique la création d’un framework MVC personnalisé.  
-Elle permet de gérer une collection de vidéos avec un routage propre, des vues réutilisables et une interaction sécurisée avec la base de données.  
+ -Fonctionnalités principales
+ -Gestion des bières (ajout, modification, suppression, consultation)
+ -Suivi des niveaux de stock et approvisionnements
+ -Gestion des fournisseurs et des clients
+ -Affichage des statistiques de ventes et d’achats
+ -Architecture MVC assurant la séparation des responsabilités---
 
----
+## 🌍 English
 
-##  Key Features / Fonctionnalités
--  Manage video records (add, edit, delete, list)  
--  Search and filter videos  
--  MVC architecture with Controllers, Models, and Views  
--  Database integration with PDO prepared statements  
--  Simple UI built with Bootstrap  
--  Lightweight and fast  
+### 📌 Overview
+MVCTUBE is a **PHP MVC application** designed for managing a beer inventory.  
+It enables users to manage suppliers, beers, orders, and stock levels, while following the **Model–View–Controller architecture** for clean and scalable development.  
 
--  Gérer des vidéos (ajout, modification, suppression, liste)  
--  Rechercher et filtrer les vidéos  
--  Architecture MVC avec Contrôleurs, Modèles et Vues  
--  Intégration avec une base de données via PDO (requêtes préparées)  
--  Interface simple avec Bootstrap  
--  Rapide et léger  
+###  Key Features
+-  Manage beers (add, update, delete, view)  
+-  Track stock levels and supply updates  
+-  Manage suppliers and clients  
+-  Display sales and purchase statistics  
+-  MVC architecture ensuring separation of concerns  
 
----
-
-##  Tech Stack / Technologies
-- **Language / Langage :** PHP 8  
-- **Framework:** Custom MVC (no framework, built from scratch)  
-- **Database / Base de données :** MySQL  
+###  Tech Stack
+- **Language:** PHP  
+- **Database:** MySQL  
 - **Front-end:** HTML, CSS, Bootstrap  
-- **Other / Autres :** Composer, PDO  
+- **Architecture:** MVC (Model–View–Controller)  
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/carmela0505/Projet_PHP.git
+   cd MVCTUBE
 
 ##  Installation
-
 ### English
 1. Clone the repository:
    ```bash
    git clone https://github.com/carmela0505/Projet_PHP.git
-
- cd MVCTUBE
 
  ## Install dependencies 
  composer install
@@ -54,7 +55,6 @@ DB_USER=your_user
 DB_PASS=your_password
 
 Import database.sql
-
 Run locally:
 
 php -S localhost:8000 -t public
