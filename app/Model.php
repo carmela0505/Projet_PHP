@@ -27,6 +27,11 @@ public function __construct() {
     $this->db_name = getenv('DB_NAME');
     $this->username = getenv('DB_USER');
     $this->password = getenv('DB_PASSWORD');
+
+
+     // DEBUG temporaire - à supprimer après
+    echo "HOST: " . $this->host . "<br>";
+    echo "DB: " . $this->db_name . "<br>";
 }
 
     // Propriété qui contiendra l'instance de la connexion
