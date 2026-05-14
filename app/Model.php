@@ -23,15 +23,13 @@ public function __construct() {
             }
         }
     }
-    $this->host = getenv('DB_HOST');
-    $this->db_name = getenv('DB_NAME');
-    $this->username = getenv('DB_USER');
-    $this->password = getenv('DB_PASSWORD');
-
-
-     // DEBUG temporaire - à supprimer après
+    $this->host = $_ENV['DB_HOST'] ?? getenv('DB_HOST');
+    $this->db_name = $_ENV['DB_NAME'] ?? getenv('DB_NAME');
+    $this->username = $_ENV['DB_USER'] ?? getenv('DB_USER');
+    $this->password = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD');
+    
+    // DEBUG temporaire
     echo "HOST: " . $this->host . "<br>";
-    echo "DB: " . $this->db_name . "<br>";
 }
 
     // Propriété qui contiendra l'instance de la connexion
