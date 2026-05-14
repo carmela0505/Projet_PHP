@@ -1,112 +1,94 @@
 <?php
-abstract class Model{
-    // Informations de la base de données
-    // private $host = "localhost";
-    // private $db_name = "";
-    // private $username = "";
-    // private $password = "";
 
-    private $host;
-    private $db_name;
-    private $username;
-    private $password;
+abstract class Model
+{
+    protected $_connexion;
 
-public function __construct() {
-    // Charge le .env si il existe (en local)
-    $envFile = ROOT . '.env';
-    if (file_exists($envFile)) {
-        $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($lines as $line) {
-            if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+    public $table;
+    public $id;
+
+    abstract public function update(int $id, string $nom);
+    abstract public function delete(int $id);
+    abstract public function insert(string $nom);
+
+    private function loadEnv(): void
+    {
+        $envFile = ROOT . '.env';
+
+        if (file_exists($envFile)) {
+            $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+            foreach ($lines as $line) {
+                if (str_starts_with(trim($line), '#') || !str_contains($line, '=')) {
+                    continue;
+                }
+
                 [$key, $value] = explode('=', $line, 2);
                 putenv(trim($key) . '=' . trim($value));
             }
         }
     }
-    $this->host = $_ENV['DB_HOST'] ?? getenv('DB_HOST');
-    $this->db_name = $_ENV['DB_NAME'] ?? getenv('DB_NAME');
-    $this->username = $_ENV['DB_USER'] ?? getenv('DB_USER');
-    $this->password = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD');
-    
-    // DEBUG temporaire
-    echo "HOST: " . $this->host . "<br>";
-}
 
-    // Propriété qui contiendra l'instance de la connexion
-    protected $_connexion;
+    public function getConnection()
+    {
+        $this->loadEnv();
 
-    // Propriétés permettant de personnaliser les requêtes
-    public $table;
-    public $id; 
-                
-    abstract public function update(int $id, string $nom);
-    abstract public function delete(int $id);
-    abstract public function insert(string $nom);
-    /**
-     * Fonction d'initialisation de la base de données
-     *
-     * @return void
-     */
-    public function getConnection(){
-          echo "ENTER GETCONNECTION";
+        $host = getenv('DB_HOST') ?: 'mysql-b5b5c36-symfonyproject-db2026.i.aivencloud.com';
+        $port = getenv('DB_PORT') ?: '22403';
+        $dbName = getenv('DB_NAME') ?: 'defaultdb';
+        $user = getenv('DB_USER') ?: 'avnadmin';
+        $password = getenv('DB_PASSWORD');
 
-    // On supprime la connexion précédente
-    $this->_connexion = null;
+        if (!$password) {
+            die('Erreur : DB_PASSWORD manquant dans .env ou Render Environment Variables');
+        }
 
-    // On essaie de se connecter à la base
-    try{
+        try {
+            $this->_connexion = new PDO(
+                "mysql:host=$host;port=$port;dbname=$dbName;charset=utf8mb4",
+                $user,
+                $password,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                ]
+            );
 
-   $this->_connexion = new PDO(
-    "mysql:host=" . $this->host . ";port=22403;dbname=" . $this->db_name . ";charset=utf8mb4",
-    $this->username,
-    $this->password,
-    [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-    ]
-);
+            $this->_connexion->exec("set names utf8mb4");
 
-    $this->_connexion->exec("set names utf8");
+        } catch (PDOException $exception) {
+            die("Erreur de connexion : " . $exception->getMessage());
+        }
+    }
 
-}catch(PDOException $exception){
-
-    die("Erreur de connexion : " . $exception->getMessage());
-}}
-    /**
-     * Méthode permettant d'obtenir un enregistrement de la table choisie en fonction d'un id
-     *
-     * @return void
-     */
-    public function getOne(){
-        // Constitution des conditions de recherche de la clé primaire (pouvant être composée)
+    public function getOne()
+    {
         $cle_recherchee = "";
-        $tab_cles = array();
-        foreach ($this->id as $key => $value){
-            $tab_cles[] = $key. "=".$value;
-        }
-        $cle_recherchee = implode(" AND ",  $tab_cles );
+        $tab_cles = [];
 
-        // Mise en forme de la requete
-        //$sql = "SELECT * FROM ".$this->table." WHERE id=".$this->id;
-        $sql = "SELECT * FROM ".$this->table." WHERE ". $cle_recherchee;
-        // echo "<br/>".$sql."<br/>";
+        foreach ($this->id as $key => $value) {
+            $tab_cles[] = $key . "=" . $value;
+        }
+
+        $cle_recherchee = implode(" AND ", $tab_cles);
+
+        $sql = "SELECT * FROM " . $this->table . " WHERE " . $cle_recherchee;
         $query = $this->_connexion->prepare($sql);
         $query->execute();
-        return $query->fetch();    
+
+        return $query->fetch();
     }
-    /**
-     * Méthode permettant d'obtenir tous les enregistrements de la table choisie
-     *
-     * @return void
-     */
-    public function getAll(string $ordre_tri=""){
-        $sql = "SELECT * FROM ".$this->table;
+
+    public function getAll(string $ordre_tri = "")
+    {
+        $sql = "SELECT * FROM " . $this->table;
+
         if ($ordre_tri != "") {
-            $sql .= " ORDER BY ".$ordre_tri;
+            $sql .= " ORDER BY " . $ordre_tri;
         }
+
         $query = $this->_connexion->prepare($sql);
         $query->execute();
-        return $query->fetchAll();    
-    }
 
+        return $query->fetchAll();
+    }
 }

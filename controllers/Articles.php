@@ -12,10 +12,6 @@ class Articles extends Controller
     {
         $this->loadModel("Article");
         $allArticles= $this->Article->allArticles();
-        echo "<pre>";
-       var_dump($allArticles);
-       echo "</pre>";
-       die();
         $allMarques = $this->Article->allMarques();
         $allCouleurs = $this->Article->allCouleurs();
         $allTypes = $this->Article->allTypes();

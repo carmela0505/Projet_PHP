@@ -1,23 +1,11 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Installe l'extension PDO MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Active le mod_rewrite
-RUN a2enmod rewrite
+WORKDIR /app
 
-# Config Apache pour autoriser .htaccess
-RUN echo '<Directory /var/www/html>\n\
-    Options Indexes FollowSymLinks\n\
-    AllowOverride All\n\
-    Require all granted\n\
-</Directory>' > /etc/apache2/conf-available/mvctube.conf \
-&& a2enconf mvctube
+COPY . .
 
-# Copie tout le projet dans Apache
-COPY . /var/www/html/
+EXPOSE 10000
 
-# Permissions
-RUN chown -R www-data:www-data /var/www/html
-
-EXPOSE 80
+CMD php -S 0.0.0.0:10000
