@@ -19,4 +19,4 @@
     </select>
     <button type="submit" class="btn btn-warning">Valider</button>
 </form>
-<img src="https://www.jdwetherspoon.com/~/media/images/aut16/san-miguel-11.jpg?h=350&w=550&la=en&hash=A4A006495AA3B97AE26170E248EC0CC259E3CD4E" width="60%" height="500" >
+<img src="https://ec.europa.eu/eurostat/documents/4187653/17240464/Alter-ego_Shutterstock_1818547007_RV.jpg" width="70%" height="500" >
