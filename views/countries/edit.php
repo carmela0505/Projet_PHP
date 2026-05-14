@@ -3,7 +3,7 @@
 <h2>Pays à modifier</h2>
 
 
-<form action="<?= PATH ?>/Countries/updateCountry" method="POST">
+<form action="<?= PATH ?>/index.php?p=countries/updateCountry" method="POST">
 <input type="hidden" name="id" value="<?= $currentCountryId;?>">
 
     Entrez un nouveau pays : <input type="text" name="updatedCountry"> 

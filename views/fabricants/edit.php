@@ -1,6 +1,6 @@
 <br><h2>Fabricant à modifier </h2><br>
 
-<form action="<?= PATH ?>/fabricants/updateFabricant" method="POST">
+<form action="<?= PATH ?>/index.php?p=fabricants/updateFabricant" method="POST">
 <br>
 <br>
 <input type="hidden" name="id" value="<?= $currentFabricantId;?>">

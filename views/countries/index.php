@@ -1,7 +1,7 @@
 <br><br>
 <h1>Liste des pays</h1>
 
-<form action="<?= PATH ?>/Countries/newCountry" method="POST">
+<form action="<?= PATH ?>/index.php?p=countries/newCountry" method="POST">
 
     Entrez un nouveau pays : <input type="text" name="country"> 
     <select name="continent" >
@@ -28,9 +28,9 @@
             <td><?= $country['NOM_CONTINENT'] ?></td>
 
             <td>
-                <a href="<?= PATH ?>/countries/edit/<?= $country['ID_PAYS'] ?>">
+                <a href="<?= PATH ?>/index.php?p=countries/edit/<?= $country['ID_PAYS'] ?>">
                     <button class='btn btn-info btn-sm fas fa-pencil-alt fa-sm'></button></a>
-                <a onclick="return confirm('Etes vous sur de vouloir supprimer ce pays ?')" href="<?= PATH ?>/countries/deleteCountry/<?= $country['ID_PAYS']?>">
+                <a onclick="return confirm('Etes vous sur de vouloir supprimer ce pays ?')" href="<?= PATH ?>/index.php?p=countries/deleteCountry/<?= $country['ID_PAYS']?>">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>

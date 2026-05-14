@@ -1,7 +1,7 @@
 <br><br><h1>Liste des couleurs </h1>
 
 
-<form action="<?= PATH ?>/Couleurs/newColor" method="POST">
+<form action="<?= PATH ?>/index.php?p=couleurs/newColor" method="POST">
 
     Entrez une nouvelle couleur : <input type="text" name="couleur"> 
     <button type="submit" class="btn btn-primary">Valider</button>
@@ -21,9 +21,9 @@
             <td><?= $color['ID_COULEUR'] ?></td>
             <td><?= $color['NOM_COULEUR'] ?></td>
             <td>
-                <a href="<?= PATH ?>/couleurs/edit/<?= $color['ID_COULEUR'] ?>">
+                <a href="<?= PATH ?>/index.php?p=couleurs/edit/<?= $color['ID_COULEUR'] ?>">
                     <button class='btn btn-info btn-sm fas fa-pencil-alt fa-sm'></button></a>
-                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette couleur ?')" href="<?= PATH ?>/couleurs/deleteColor/<?= $color['ID_COULEUR']?>">
+                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette couleur ?')" href="<?= PATH ?>/index.php?p=couleurs/deleteColor/<?= $color['ID_COULEUR']?>">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>

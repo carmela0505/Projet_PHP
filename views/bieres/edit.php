@@ -1,6 +1,6 @@
 <br><br><h2>Bière à modifier  </h2>
 
-<form action="<?= PATH ?>/bieres/updateBiere" method="POST">
+<form action="<?= PATH ?>/index.php?p=bieres/updateBiere" method="POST">
 <br>
 <br>
 <input type="hidden" name="id" value="<?= $currentBiereId;?>">

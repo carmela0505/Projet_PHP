@@ -2,7 +2,7 @@
 
 <br><h2>Couleur à modifier </h2><br>
 
-<form action="<?= PATH ?>/couleurs/updateColor" method="POST">
+<form action="<?= PATH ?>/index.php?p=couleurs/updateColor" method="POST">
 <br>
 
 <input type="hidden" name="id" value="<?= $currentColorId;?>">
