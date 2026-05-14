@@ -24,28 +24,28 @@
             <div class="d-flex justify-content-center">
             <!-- <img src="app/images/logo2.jpg" alt="logo" width="100" height="70" ><br> -->
             
-                <a href="<?= PATH ?>/home"><br>
+                <a href="?p=home">Accueil</a>
                     <button id="btnHome" class="btn">Accueil</button>
                 </a>
-                <a href="<?= PATH ?>/articles"><br>
+                <a href="?p=articles">Articles</a>
                     <button id="btnArticle" class="btn">Articles</button>
                 </a>
-                <a class="" href="<?= PATH ?>/marques"><br>
+                <a href="?p=marques">Marques</a>
                     <button id="btnMarque" class="btn">Marques</button>
                 </a>
-                <a class="" href="<?= PATH ?>/bieres"><br>
+                <a href="?p=bieres">Type</a>
                     <button id="btnBiere" class="btn">Type</button>
                 </a>
-                <a class="" href="<?= PATH ?>/countries"><br>
+                <a href="?p=countries">Pays</a>
                     <button id="btnCountry" class="btn">Pays</button>
                 </a>
-                <a class="" href="<?= PATH ?>/fabricants"><br>
+                <a href="?p=fabricants">Fabricants</a>
                     <button id="btnFabricant" class="btn"> Fabricants</button>
                 </a>
-                <a class="" href="<?= PATH ?>/continents"><br>
+                <a href="?p=continents">Continents</a>
                     <button id="btnContinent" class="btn">Continents</button>
                 </a>
-                <a class="" href="<?= PATH ?>/couleurs"><br>
+                <a href="?p=couleurs">Couleurs</a>
                     <button id="btnCouleurs" class="btn ">Couleurs</button>
                 </a>
             </div>
