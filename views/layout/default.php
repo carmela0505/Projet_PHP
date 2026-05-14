@@ -23,37 +23,32 @@
         <header>
             <div class="d-flex justify-content-center">
             <!-- <img src="app/images/logo2.jpg" alt="logo" width="100" height="70" ><br> -->
-            <a href="<?= PATH ?>/index.php?p=home">
-    <button id="btnHome" class="btn">Accueil</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=articles"><br>
+            
+                <a href="<?= PATH ?>/home"><br>
+                    <button id="btnHome" class="btn">Accueil</button>
+                </a>
+                <a href="<?= PATH ?>/index.php?p=articles"><br>
     <button id="btnArticle" class="btn">Articles</button>
 </a>
-
-<a href="<?= PATH ?>/index.php?p=marques"><br>
-    <button id="btnMarque" class="btn">Marques</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=bieres"><br>
-    <button id="btnBiere" class="btn">Type</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=countries"><br>
-    <button id="btnCountry" class="btn">Pays</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=fabricants"><br>
-    <button id="btnFabricant" class="btn">Fabricants</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=continents"><br>
-    <button id="btnContinent" class="btn">Continents</button>
-</a>
-
-<a href="<?= PATH ?>/index.php?p=couleurs"><br>
-    <button id="btnCouleurs" class="btn">Couleurs</button>
-</a>
+                <a class="" href="<?= PATH ?>/marques"><br>
+                    <button id="btnMarque" class="btn">Marques</button>
+                </a>
+                <a class="" href="<?= PATH ?>/bieres"><br>
+                    <button id="btnBiere" class="btn">Type</button>
+                </a>
+                <a class="" href="<?= PATH ?>/countries"><br>
+                    <button id="btnCountry" class="btn">Pays</button>
+                </a>
+                <a class="" href="<?= PATH ?>/fabricants"><br>
+                    <button id="btnFabricant" class="btn"> Fabricants</button>
+                </a>
+                <a class="" href="<?= PATH ?>/continents"><br>
+                    <button id="btnContinent" class="btn">Continents</button>
+                </a>
+                <a class="" href="<?= PATH ?>/couleurs"><br>
+                    <button id="btnCouleurs" class="btn ">Couleurs</button>
+                </a>
+            </div>
 
     
             <header>

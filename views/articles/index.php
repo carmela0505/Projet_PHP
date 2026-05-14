@@ -1,7 +1,7 @@
 <br><br>
 <h1>Liste des Articles</h1><br>
 
-<form action="<?= PATH ?>/Articles/newArticle" method="POST">
+<form action="<?= PATH ?>/index.php?p=articles/newArticle" method="POST">
 <!-- <input type="hidden" name="id" value="<? //$currentArticleId;?>"> -->
 
     Entrez un nouvel article : <input type="text" name="article"> 
@@ -74,9 +74,9 @@
             <td><?= $article['NOM_TYPE'] ?></td>
 
             <td>
-                <a href="<?= PATH ?>/articles/edit/<?= $article['ID_ARTICLE'] ?>">
+                <a href="<?= PATH ?>/index.php?p=articles/edit/<?= $article['ID_ARTICLE'] ?>">
                     <button class='btn btn-info btn-sm fas fa-pencil-alt fa-sm'></button></a>
-                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette article ?')" href="<?= PATH ?>/articles/deleteArticle/<?= $article['ID_ARTICLE']?>">
+                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette article ?')" href="<?= PATH ?>/index.php?p=articles/deleteArticle/<?= $article['ID_ARTICLE']?>">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>

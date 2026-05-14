@@ -1,7 +1,7 @@
 <br><br><h1 >Article à modifier</h1><br><br>
 
 
-<form action="<?= PATH ?>/Articles/updateArticle" method="POST">
+<form action="<?= PATH ?>/index.php?p=articles/updateArticle" method="POST">
 <input type="hidden" name="id" value="<?= $currentArticleId;?>">
 
     Modifiez un article : <input type="text" name="updatedArticle"> 
