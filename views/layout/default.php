@@ -24,7 +24,7 @@
             <div class="d-flex justify-content-center">
             <!-- <img src="app/images/logo2.jpg" alt="logo" width="100" height="70" ><br> -->
             
-               <a href="<?= PATH ?>/index.php?p=home">
+               <a href="<?= PATH ?>/index.php?p=home"><br>
     <button id="btnHome" class="btn">Accueil</button>
 </a>
 
