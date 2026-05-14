@@ -13,6 +13,8 @@
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 // Mettre '' si le site est à la racine du serveur
 define('PATH', getUrlWithoutFilename());
+echo "PATH: " . PATH . "<br>";
+echo "GET p: " . @$_GET['p'] . "<br>";
 
 // On appelle le modèle et le contrôleur principaux
 require_once(ROOT.'app/Model.php');
@@ -23,7 +25,7 @@ require_once(ROOT.'app/Controller.php');
 
     // Si au moins 1 paramètre existe
    try {
-    $params = explode('/', @$_GET['p']);
+    $params = explode('/', isset($_GET['p']) ? $_GET['p'] : '');
 
     if($params[0] != ""){
         // On sauvegarde le 1er paramètre dans $controller en mettant sa 1ère lettre en majuscule
