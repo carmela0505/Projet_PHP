@@ -1,0 +1,27 @@
+h1,
+h2,
+h5,
+h6 {
+  font-family: "Vidaloka", serif;
+}
+
+* {
+  text-align: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+}
+
+.content {
+  flex: 1;
+  min-height: 86vh;
+}
+/* h1, h2,h5, h6 {
+           font-family: 'Vidaloka', serif;;
+        } */
+.btn {
+  margin-left: 5px;
+}
