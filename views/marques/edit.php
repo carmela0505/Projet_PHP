@@ -1,7 +1,7 @@
 <br><h2>Marque à modifier</h2><br>
 
 
-<form action="<?= PATH ?>/Marques/updateMarque" method="POST">
+<form action="<?= PATH ?>/index.php?p=marques/updateMarque" method="POST">
 <input type="hidden" name="id" value="<?= $currentMarqueId;?>">
 
     Entrez une nouvelle marque : <input type="text" name="updatedMarque"> 

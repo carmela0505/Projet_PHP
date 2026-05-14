@@ -3,7 +3,7 @@
 
 <form action="<?= PATH ?>/index.php?p=bieres/newBiere" method="POST">
 
-    Ajouter une nouvelle type de biere : <input type="text" name="biere"> 
+    Ajouter un nouveau type de biere : <input type="text" name="biere"> 
     <button type="submit" class="btn btn-primary">Valider</button>
  <br><br>
 
@@ -23,7 +23,7 @@
             <td>
                 <a href="<?= PATH ?>/index.php?p=bieres/edit/<?= $biere['ID_TYPE'] ?>">
                     <button class='btn btn-info btn-sm fas fa-pencil-alt fa-sm'></button></a>
-                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette biere ?')" href="<?= PATH ?>/index.php?p=bieres/deleteBiere/<?= $biere['ID_TYPE']?>">
+                <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette biere ?')" href="<?= PATH ?>/index.php?p=bieres/deleteBiere/<?= $biere['ID_TYPE']?>">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>

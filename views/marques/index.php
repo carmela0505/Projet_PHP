@@ -1,7 +1,7 @@
 <br><br>
 <h1>Liste des Marques</h1>
 
-<form action="<?= PATH ?>/Marques/newMarque" method="POST">
+<form action="<?= PATH ?>/index.php?p=marques/newMarque" method="POST">
 <input type="hidden" name="id" value="<?= $currentMarqueId;?>">
 
     Entrez une nouvelle marque : <input type="text" name="marque"> 
@@ -38,9 +38,9 @@
             <td><?= $marque['NOM_FABRICANT'] ?></td>
 
             <td>
-                <a href="<?= PATH ?>/marques/edit/<?= $marque['ID_MARQUE'] ?>">
+                <a href="<?= PATH ?>/index.php?p=marques/edit/<?= $marque['ID_MARQUE'] ?>">
                     <button class='btn btn-info btn-sm fas fa-pencil-alt fa-sm'></button></a>
-                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette marque ?')" href="<?= PATH ?>/marques/deleteMarque/<?= $marque['ID_MARQUE']?>">
+                <a onclick="return confirm('Etes vous sur de vouloir supprimer cette marque ?')" href="<?= PATH ?>/index.php?p=marques/deleteMarque/<?= $marque['ID_MARQUE']?>">
                     <button class='btn btn-danger btn-sm fas fa-trash-alt fa-sm'></button></a>
             </td>
         </tr>
