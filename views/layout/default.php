@@ -23,32 +23,37 @@
         <header>
             <div class="d-flex justify-content-center">
             <!-- <img src="app/images/logo2.jpg" alt="logo" width="100" height="70" ><br> -->
-            
-                <a href="?p=home">Accueil</a>
-                    <button id="btnHome" class="btn">Accueil</button>
-                </a>
-                <a href="?p=articles">Articles</a>
-                    <button id="btnArticle" class="btn">Articles</button>
-                </a>
-                <a href="?p=marques">Marques</a>
-                    <button id="btnMarque" class="btn">Marques</button>
-                </a>
-                <a href="?p=bieres">Type</a>
-                    <button id="btnBiere" class="btn">Type</button>
-                </a>
-                <a href="?p=countries">Pays</a>
-                    <button id="btnCountry" class="btn">Pays</button>
-                </a>
-                <a href="?p=fabricants">Fabricants</a>
-                    <button id="btnFabricant" class="btn"> Fabricants</button>
-                </a>
-                <a href="?p=continents">Continents</a>
-                    <button id="btnContinent" class="btn">Continents</button>
-                </a>
-                <a href="?p=couleurs">Couleurs</a>
-                    <button id="btnCouleurs" class="btn ">Couleurs</button>
-                </a>
-            </div>
+            <a href="<?= PATH ?>/index.php?p=home">
+    <button id="btnHome" class="btn">Accueil</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=articles"><br>
+    <button id="btnArticle" class="btn">Articles</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=marques"><br>
+    <button id="btnMarque" class="btn">Marques</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=bieres"><br>
+    <button id="btnBiere" class="btn">Type</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=countries"><br>
+    <button id="btnCountry" class="btn">Pays</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=fabricants"><br>
+    <button id="btnFabricant" class="btn">Fabricants</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=continents"><br>
+    <button id="btnContinent" class="btn">Continents</button>
+</a>
+
+<a href="<?= PATH ?>/index.php?p=couleurs"><br>
+    <button id="btnCouleurs" class="btn">Couleurs</button>
+</a>
 
     
             <header>
