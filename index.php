@@ -12,7 +12,7 @@
 // On génère une constante contenant le chemin vers la racine publique du projet
 define('ROOT', str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 // Mettre '' si le site est à la racine du serveur
-define('PATH', getUrlWithoutFilename());
+define('PATH', '');
 echo "PATH: " . PATH . "<br>";
 echo "GET p: " . @$_GET['p'] . "<br>";
 
