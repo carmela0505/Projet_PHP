@@ -19,4 +19,4 @@
     </select>
     <button type="submit" class="btn btn-warning">Valider</button>
 </form>
-<img src="https://ec.europa.eu/eurostat/documents/4187653/17240464/Alter-ego_Shutterstock_1818547007_RV.jpg" width="70%" height="500" >
+<img src="https://img.freepik.com/premium-photo/three-glasses-with-draft-beer-front-wooden-barrel-decoration-barley-ears-fresh-hops_341862-13588.jpg" width="70%" height="500" >
