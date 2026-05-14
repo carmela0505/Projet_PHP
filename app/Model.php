@@ -12,6 +12,17 @@ abstract class Model{
     private $password;
 
 public function __construct() {
+    // Charge le .env si il existe (en local)
+    $envFile = ROOT . '.env';
+    if (file_exists($envFile)) {
+        $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+                [$key, $value] = explode('=', $line, 2);
+                putenv(trim($key) . '=' . trim($value));
+            }
+        }
+    }
     $this->host = getenv('DB_HOST');
     $this->db_name = getenv('DB_NAME');
     $this->username = getenv('DB_USER');
@@ -48,7 +59,7 @@ public function __construct() {
     $this->password,
     [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
     ]
 );
 
